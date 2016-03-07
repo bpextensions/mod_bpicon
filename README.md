@@ -1,2 +1,2 @@
-# mod_bpicon
-A Joomla! 3 module for displaying an FontAwesome Icon
+# mod_bpicon updates server
+And update server branch for BP Icon Joomla! module.
