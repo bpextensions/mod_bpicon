@@ -1,0 +1,19 @@
+<update>
+    <name>BP Icon</name>
+    <description>BP Icon module</description>
+    <element>mod_bpicon</element>
+    <type>module</type>
+    <version>1.0.0</version>
+    <client>0</client>
+    <infourl title="BestProject">http://www.bestproject.pl/</infourl>
+    <downloads>
+        <downloadurl type="upgrade" format="zip">https://github.com/bestproject/mod_bpicon/releases/download/1.0.0/mod_bpicon_1.0.0.zip</downloadurl>
+    </downloads>
+    <tags>
+        <tag>stable</tag>
+    </tags>
+    <maintainer>Artur Stępień</maintainer>
+    <maintainerurl>http://www.bestproject.pl</maintainerurl>
+    <section>Testing</section>
+    <targetplatform name="joomla" version="3.4"/>
+</update>
