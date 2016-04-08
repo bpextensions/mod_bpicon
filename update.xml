@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
 <update>
     <name>BP Icon</name>
     <description>BP Icon module</description>
@@ -36,3 +38,4 @@
     <section>Testing</section>
     <targetplatform name="joomla" version="3.4"/>
 </update>
+</updates>
