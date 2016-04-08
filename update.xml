@@ -7,7 +7,7 @@
     <type>module</type>
     <version>1.0.1</version>
     <client>0</client>
-    <infourl title="BestProject">http://www.bestproject.pl/</infourl>
+    <infourl title="Changelog">https://github.com/bestproject/mod_bpicon/blob/master/README.md</infourl>
     <downloads>
         <downloadurl type="upgrade" format="zip">https://github.com/bestproject/mod_bpicon/archive/v1.0.1.zip</downloadurl>
     </downloads>
@@ -16,7 +16,6 @@
     </tags>
     <maintainer>Artur Stępień</maintainer>
     <maintainerurl>http://www.bestproject.pl</maintainerurl>
-    <section>Testing</section>
     <targetplatform name="joomla" version="3.4"/>
 </update>
 <update>
@@ -26,7 +25,7 @@
     <type>module</type>
     <version>1.0.0</version>
     <client>0</client>
-    <infourl title="BestProject">http://www.bestproject.pl/</infourl>
+    <infourl title="Changelog">https://github.com/bestproject/mod_bpicon/blob/master/README.md</infourl>
     <downloads>
         <downloadurl type="upgrade" format="zip">https://github.com/bestproject/mod_bpicon/releases/download/1.0.0/mod_bpicon_1.0.0.zip</downloadurl>
     </downloads>
@@ -35,7 +34,6 @@
     </tags>
     <maintainer>Artur Stępień</maintainer>
     <maintainerurl>http://www.bestproject.pl</maintainerurl>
-    <section>Testing</section>
     <targetplatform name="joomla" version="3.4"/>
 </update>
 </updates>
