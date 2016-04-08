@@ -2,12 +2,12 @@
 <extension type="module" version="3.4" client="site" method="upgrade">
 	<name>mod_bpicon</name>
 	<author>Artur Stępień</author>
-	<creationDate>2016/02/11</creationDate>
+	<creationDate>2016/03/08</creationDate>
 	<copyright>Copyright (C) 2016 BestProject. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
 	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
 	<authorUrl>www.bestproject.pl</authorUrl>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<description>MOD_BPICON_XML_DESCRIPTION</description>
 	
 	<files>
@@ -50,7 +50,6 @@
 					description="MOD_BPICON_FIELD_TYPE_DESC"
 				>
 					<option value="article">MOD_BPICON_FIELD_TYPE_OPTION_ARTICLE</option>
-					<option value="article_k2">MOD_BPICON_FIELD_TYPE_OPTION_ARTICLEK2</option>
 					<option value="text">MOD_BPICON_FIELD_TYPE_OPTION_TEXT</option>
 				</field>
 				<field name="article" type="modal_article"
@@ -59,12 +58,6 @@
 					showon="type:article"
 					label="MOD_BPICON_FIELD_ARTICLE_LABEL"
 					description="MOD_BPICON_FIELD_ARTICLE_DESC"
-				/>
-				<field name="article_k2" type="item"
-					addfieldpath="/administrator/components/com_k2/elements"
-					showon="type:article_k2"
-					label="MOD_BPICON_FIELD_ARTICLEK2_LABEL"
-					description="MOD_BPICON_FIELD_ARTICLEK2_DESC"
 				/>
 				<field name="url_type" type="radio"
 					class="btn-group"
@@ -75,7 +68,6 @@
 					<option value="none">MOD_BPICON_FIELD_URLTYPE_OPTION_NONE</option>
 					<option value="external">MOD_BPICON_FIELD_URLTYPE_OPTION_EXTERNAL</option>
 					<option value="article">MOD_BPICON_FIELD_URLTYPE_OPTION_ARTICLE</option>
-					<option value="article_k2">MOD_BPICON_FIELD_URLTYPE_OPTION_ARTICLEK2</option>
 					<option value="menu">MOD_BPICON_FIELD_URLTYPE_OPTION_MENU</option>
 				</field>
 				<field name="url_external" type="text" 
@@ -90,12 +82,6 @@
 					showon="url_type:article"
 					label="MOD_BPICON_FIELD_URLARTICLE_LABEL"
 					description="MOD_BPICON_FIELD_URLARTICLE_DESC"
-				/>
-				<field name="url_article_k2" type="item"
-					addfieldpath="/administrator/components/com_k2/elements"
-					showon="url_type:article_k2"
-					label="MOD_BPICON_FIELD_URLARTICLEK2_LABEL"
-					description="MOD_BPICON_FIELD_URLARTICLEK2_DESC"
 				/>
 				<field name="url_menu" type="menuitem" 
 					showon="url_type:menu"

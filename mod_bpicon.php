@@ -19,7 +19,6 @@ $iconsize = (int)$params->get('iconsize',64);
 $title = trim($params->get('title',''));
 $text = trim($params->get('text',''));
 $article = trim($params->get('article',''));
-$article_k2 = trim($params->get('article_k2',''));
 $url_type = trim($params->get('url_type'));
 $linking_type = trim($params->get('linking_type'));
 $button_title = trim($params->get('button_title','MOD_BPICON_READMORE'));
@@ -30,12 +29,7 @@ if( $type=='article' AND $article = ModBPIconHelper::getArticle($article) ) {
 	$title = $article->title;
 	$text = $article->introtext;
 	
-} elseif ( $type=='article_k2' AND $article = ModBPIconHelper::getArticleK2($article_k2) ) {
-	
-	$title = $article->title;
-	$text = $article->introtext;
-	
-}
+} 
 
 //$list = &ModBannersHelper::getList($params);
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));

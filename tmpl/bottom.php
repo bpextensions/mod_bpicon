@@ -11,6 +11,7 @@
 
 JFactory::getDocument()->addStyleSheet('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
 
+// Route URL if this is internal URL
 $url = substr($url,0,9)=='index.php' ? JRoute::_($url) : $url;
 
 ?>
