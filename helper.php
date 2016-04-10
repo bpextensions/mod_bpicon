@@ -1,12 +1,12 @@
 <?php
 /**
  * @package		mod_bpicon
- * @date			2016-02-11
+ * @date		2016-02-11
  * @author		Artur Stępień
  * @email		artur.stepien@bestproject.pl
- * @copyright	(C) 20016 Bestproject. All rights reserved.
+ * @copyright	(C) 2016 Bestproject. All rights reserved.
  * @license		GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt
- * @link			http://www.bestproject.pl
+ * @link		http://www.bestproject.pl
  */
 defined('_JEXEC') or die;
 

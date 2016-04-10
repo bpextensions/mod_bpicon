@@ -7,13 +7,15 @@
 	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
 	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
 	<authorUrl>www.bestproject.pl</authorUrl>
-	<version>1.1.0</version>
+	<version>1.2.0</version>
 	<description>MOD_BPICON_XML_DESCRIPTION</description>
 	
 	<files>
-		<filename module="mod_bpicon">mod_bpicon.php</filename>
+		<folder>fields</folder>
+		<folder>language</folder>
 		<folder>tmpl</folder>
 		<filename>helper.php</filename>
+		<filename module="mod_bpicon">mod_bpicon.php</filename>
 	</files>
 	
 	<languages folder="language">
@@ -29,9 +31,9 @@
 	
 	<config>
 		<fields name="params">
-			<fieldset name="basic">
-				<field name="icon" type="text"
-					required="true"
+			<fieldset name="basic" addfieldpath="/modules/mod_bpicon/fields">
+				<field name="icon" type="fontawesomepreview"
+					required="true" default="joomla"
 					label="MOD_BPICON_FIELD_ICON_LABEL"
 					description="MOD_BPICON_FIELD_ICON_DESC"
 				/>
