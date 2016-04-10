@@ -12,8 +12,10 @@ A Joomla! 3 module for displaying an FontAwesome Icon
 ### 1.2.0
 - Added an easy selection for FontAwesome icons.
 - Fixed version number.
+
 ### 1.0.1
 Removing K2 support. Developers ignore bug reports and refuse to fix them. 
+
 ### 1.0.0
 Initial release
 
