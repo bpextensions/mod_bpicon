@@ -9,6 +9,9 @@ A Joomla! 3 module for displaying an FontAwesome Icon
 - Bootstrap3 ready
 
 ## Changelog
+### 1.2.1
+- Fixed a bug where module text was saved with HTML tags removed.
+
 ### 1.2.0
 - Added an easy selection for FontAwesome icons.
 - Fixed version number.
