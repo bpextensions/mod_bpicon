@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
 	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
 	<authorUrl>www.bestproject.pl</authorUrl>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 	<description>MOD_BPICON_XML_DESCRIPTION</description>
 	
 	<files>
@@ -115,7 +115,7 @@
 					description="MOD_BPICON_FIELD_TITLE_DESC"
 				/>
 				<field name="text" type="editor" 
-					showon="type:text"
+					showon="type:text" filter="safehtml"
 					label="MOD_BPICON_FIELD_TEXT_LABEL"
 					description="MOD_BPICON_FIELD_TEXT_DESC"
 				/>
