@@ -7,7 +7,7 @@
 	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
 	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
 	<authorUrl>www.bestproject.pl</authorUrl>
-	<version>1.2.1</version>
+	<version>1.3</version>
 	<description>MOD_BPICON_XML_DESCRIPTION</description>
 	
 	<files>
@@ -32,13 +32,43 @@
 	<config>
 		<fields name="params">
 			<fieldset name="basic" addfieldpath="/modules/mod_bpicon/fields">
-				<field name="icon" type="fontawesomepreview"
-					required="true" default="joomla"
+                
+                <field name="provider" type="radio"
+					default="fontawesome"
+					class="btn-group"
+					required="true"
+					label="MOD_BPICON_FIELD_PROVIDER_LABEL"
+					description="MOD_BPICON_FIELD_PROVIDER_DESC"
+				>
+					<option value="fontawesome">MOD_BPICON_FIELD_PROVIDER_OPTION_FONTAWESOME</option>
+					<option value="materialicons">MOD_BPICON_FIELD_PROVIDER_OPTION_MATERIALICONS</option>
+					<option value="image">MOD_BPICON_FIELD_PROVIDER_OPTION_IMAGE</option>
+				</field>
+                
+				<field name="icon_materialdesign" type="materialdesigniconspreview"
+					required="true" default="local_florist"
+                    showon="provider:materialicons"
 					label="MOD_BPICON_FIELD_ICON_LABEL"
 					description="MOD_BPICON_FIELD_ICON_DESC"
 				/>
+                
+				<field name="icon_fontawesome" type="fontawesomepreview"
+					required="true" default="joomla"
+                    showon="provider:fontawesome"
+					label="MOD_BPICON_FIELD_ICON_LABEL"
+					description="MOD_BPICON_FIELD_ICON_DESC"
+				/>
+                
+                <field name="icon_image" type="media" 
+                    preview="tooltip" preview_width="64" preview_height="64"
+					required="true" default="images/joomla_black.png"
+                    showon="provider:image"
+					label="MOD_BPICON_FIELD_ICON_LABEL"
+					description="MOD_BPICON_FIELD_ICON_DESC"
+				/>
+                
 				<field name="iconsize" type="number"
-					min="1"
+					min="1" showon="provider:fontawesome,materialicons"
 					required="true"
 					default="64"
 					label="MOD_BPICON_FIELD_ICONSIZE_LABEL"

@@ -19,11 +19,7 @@ $url = substr($url,0,9)=='index.php' ? JRoute::_($url) : $url;
 	<div class="row">
 		
 		<div class="col-xs-4 text-center icon">
-			<?php if( $url_type!='none' AND in_array($linking_type, array('all','icon')) ): ?>
-				<a href="<?php echo $url ?>"><i class="fa fa-<?php echo $icon ?>" style="font-size:<?php echo $iconsize ?>px"></i></a>
-			<?php else: ?>
-				<i class="fa fa-<?php echo $icon ?>" style="font-size:<?php echo $iconsize ?>px"></i>
-			<?php endif ?>
+			<?php require JModuleHelper::getLayoutPath('mod_bpicon', 'icon'); ?>
 		</div>
 		
 		<div class="col-xs-8">

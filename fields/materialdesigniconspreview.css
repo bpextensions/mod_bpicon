@@ -1,0 +1,35 @@
+#MaterialDesignIconsPreview {
+    position:fixed;top:5%;bottom:0;left:3%;right:0;width:94%;height:90%;box-sizing:border-box;
+    padding:0px 30px 30px 30px;overflow-x:hidden;overflow-y:scroll;box-shadow:0 0 40px rgba(0,0,0,1);
+    background:#fff;z-index:9999;
+}
+#MaterialDesignIconsPreview .list {
+    padding:30px 0;
+}
+#MaterialDesignIconsPreview .list .material-icons {
+    font-size:48px;width:54px;margin:0;height:54px;float:left;
+    border:3px solid transparent;padding:20px;text-align:center;
+}
+#MaterialDesignIconsPreview .list .material-icons.selected {
+    border-color:#333;
+}
+#MaterialDesignIconsPreview .list .material-icons:hover {
+    border-color:rgba(0,0,0,0.2);cursor:pointer;
+}
+#MaterialDesignIconsPreview .input-append {
+    margin-bottom:0;
+}
+#MaterialDesignIconsPreview .toolbar {
+    border-bottom:1px solid #ccc;position:static;
+    padding:30px 0;box-sizing:border-box;
+}
+#MaterialDesignIconsPreview .toolbar:after {
+    content:'';display:block;clear:both;
+}
+
+.material-icons.preview {
+    font-size:16px !important;line-height:15px;
+}
+.btn .material-icons {
+    font-size:18px !important;line-height:10px;position:relative;top:4px;
+}
