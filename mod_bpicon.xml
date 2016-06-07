@@ -2,12 +2,12 @@
 <extension type="module" version="3.4" client="site" method="upgrade">
 	<name>mod_bpicon</name>
 	<author>Artur Stępień</author>
-	<creationDate>2016/05/29</creationDate>
+	<creationDate>2016/06/07</creationDate>
 	<copyright>Copyright (C) 2016 BestProject. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
 	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
 	<authorUrl>www.bestproject.pl</authorUrl>
-	<version>1.5</version>
+	<version>1.5.1</version>
 	<description>MOD_BPICON_XML_DESCRIPTION</description>
 	
 	<files>

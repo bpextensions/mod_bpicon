@@ -7,7 +7,7 @@
 * @copyright	(C) 2016 Bestproject. All rights reserved.
 * @license		GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt
 * @link			http://www.bestproject.pl
- */
+**/
 
 // Add icon font from FontAwesome CDN
 $provider = $params->get('provider','fontawesomne');
