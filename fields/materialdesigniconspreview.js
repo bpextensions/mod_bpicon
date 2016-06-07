@@ -14,16 +14,12 @@
                async: false,
                success: function(data){
                     var icons = data.match(/(^|\s)[a-zA-Z0-9_]{1,} /g); 
-                   console.log(icons);
                 
                     for(var i=0,ic=icons.length; i<ic; i++){
                         var name = $.trim(icons[i]);
 
-                        // If icon is not in ignore list create it
-//                        if( ignore.indexOf(name)<0 && i>33 ) {
-                            var icon = $('<i class="material-icons" data-ico="'+name+'">'+name+'</i>');
-                            container.append(icon);
-//                        }
+                        var icon = $('<i class="material-icons" data-ico="'+name+'">'+name+'</i>');
+                        container.append(icon);
                     }
                }
             });

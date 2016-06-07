@@ -15,7 +15,7 @@ require_once __DIR__ . '/helper.php';
 
 $type = trim($params->get('type','text'));
 $icon_fontawesome = trim($params->get('icon_fontawesome','joomla'));
-$icon_materialicons = trim($params->get('icon_materialicons','local_florist'));
+$icon_materialicons = trim($params->get('icon_materialdesign','local_florist'));
 $icon_image = trim($params->get('icon_image','images/joomla_black.png'));
 $iconsize = (int)$params->get('iconsize',64);
 $title = trim($params->get('title',''));
