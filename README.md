@@ -12,6 +12,9 @@ A Joomla! 3 module for displaying an FontAwesome Icon
 - Bootstrap3 ready.
 
 ## Changelog
+### 1.5.4
+- Removed duplicated stylesheets.
+
 ### 1.5
 - Added support for [Google Material Design Icons](https://design.google.com/icons/).
 - Added support for selecting icon from images.
