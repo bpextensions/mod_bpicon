@@ -1,13 +1,14 @@
-<?php defined('_JEXEC') or die;
+<?php
+
+defined('_JEXEC') or die;
+
 /**
-* @package		mod_bpicon
-* @date			2016-05-27
-* @author		Artur Stępień
-* @email		artur.stepien@bestproject.pl
-* @copyright	(C) 2016 Bestproject. All rights reserved.
-* @license		GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt
-* @link			http://www.bestproject.pl
-**/
+ * @package     ${package}
+ *
+ * @copyright   Copyright (C) ${build.year} ${copyrights},  All rights reserved.
+ * @license     ${license.name}; see ${license.url}
+ * @author      ${author.name}
+ */
 
 // Add icon font from FontAwesome CDN
 $provider = $params->get('provider','fontawesomne');

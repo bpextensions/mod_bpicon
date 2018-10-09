@@ -1,5 +1,5 @@
 # mod_bpicon
-A Joomla! 3 module for displaying an FontAwesome Icon
+A Joomla! 3 module for displaying an FontAwesome/Google Material Design Icons/Image Icon.
 
 ## Functionality
 - FontAwesome Icons support (easy selection from a preview window).
@@ -10,6 +10,18 @@ A Joomla! 3 module for displaying an FontAwesome Icon
 - Linking (external url, article, menu item).
 - Update server.
 - Bootstrap3 ready.
+
+## Build from repo
+To build from repository you gonna need following tools:
+- PHP 7
+- Composer (installd globaly)
+- Node/NPM
+
+### How to prepare development environmnt
+- Clone repository into working Joomla! 3.8 installation
+- Run `composer install`
+- Run `npm install`
+- When all the requirements are installed just run `npm gulp watch`
 
 ## Changelog
 ### 1.5.4

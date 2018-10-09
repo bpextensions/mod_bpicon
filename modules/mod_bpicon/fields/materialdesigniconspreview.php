@@ -1,13 +1,11 @@
 <?php
 
 /**
- * @package		aterialDesignIconsPreview
- * @date		2016-05-27
- * @author		Artur Stępień
- * @email		artur.stepien@bestproject.pl
- * @copyright	(C) 2016 Bestproject. All rights reserved.
- * @license		GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt
- * @link		http://www.bestproject.pl
+ * @package     ${package}
+ *
+ * @copyright   Copyright (C) ${build.year} ${copyrights},  All rights reserved.
+ * @license     ${license.name}; see ${license.url}
+ * @author      ${author.name}
  */
 
 defined('_JEXEC') or die;
@@ -63,13 +61,13 @@ class JFormFieldMaterialDesignIconsPreview extends JFormField {
 
 		// If debug is enabled do not use compressed code
 		if( JFactory::getApplication()->get('debug') ) {
-			$this->doc->addScript(JURI::root().substr($this->getRelativePath(JPATH_ROOT, __DIR__.'/materialdesigniconspreview.js'),1));
-			$this->doc->addStyleSheet(JURI::root().substr($this->getRelativePath(JPATH_ROOT, __DIR__.'/materialdesigniconspreview.css'),1));
+			$this->doc->addScript(JURI::root().substr($this->getRelativePath(JPATH_ROOT, dirname(__DIR__).'/assets/module.js'),1));
+			$this->doc->addStyleSheet(JURI::root().substr($this->getRelativePath(JPATH_ROOT, dirname(__DIR__).'/assets/module.css'),1));
 
 		// Not debug enabled, use minified code
 		} else {
-			$this->doc->addScript(JURI::root().substr($this->getRelativePath(JPATH_ROOT, __DIR__.'/materialdesigniconspreview.min.js'),1));
-			$this->doc->addStyleSheet(JURI::root().substr($this->getRelativePath(JPATH_ROOT, __DIR__.'/materialdesigniconspreview.min.css'),1));
+			$this->doc->addScript(JURI::root().substr($this->getRelativePath(JPATH_ROOT, dirname(__DIR__).'/assets/module.min.js'),1));
+			$this->doc->addStyleSheet(JURI::root().substr($this->getRelativePath(JPATH_ROOT, dirname(__DIR__).'/assets/module.min.css'),1));
 		}
 		$this->doc->addStyleSheet('https://fonts.googleapis.com/icon?family=Material+Icons');
 	}

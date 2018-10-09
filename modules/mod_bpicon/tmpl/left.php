@@ -1,12 +1,13 @@
-<?php defined('_JEXEC') or die;
+<?php
+
+defined('_JEXEC') or die;
+
 /**
-* @package		mod_bpicon
-* @date			2016-02-11
-* @author		Artur Stępień
-* @email		artur.stepien@bestproject.pl
-* @copyright	(C) 2016 Bestproject. All rights reserved.
-* @license		GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt
-* @link			http://www.bestproject.pl
+ * @package     ${package}
+ *
+ * @copyright   Copyright (C) ${build.year} ${copyrights},  All rights reserved.
+ * @license     ${license.name}; see ${license.url}
+ * @author      ${author.name}
  */
 
 // Route URL if this is internal URL
@@ -15,6 +16,11 @@ $url = substr($url,0,9)=='index.php' ? JRoute::_($url) : $url;
 ?>
 <div class="modbpicon<?php echo $moduleclass_sfx ?>">
 	<div class="row">
+		
+		<div class="col-xs-4 text-center icon">
+			<?php require JModuleHelper::getLayoutPath('mod_bpicon', 'icon'); ?>
+		</div>
+		
 		<div class="col-xs-8">
 			<?php if( $title!='' ): ?>
 				<?php if( $url_type!='none' AND in_array($linking_type, array('all','title')) ): ?>
@@ -39,9 +45,6 @@ $url = substr($url,0,9)=='index.php' ? JRoute::_($url) : $url;
 			<?php if( $url_type!='none' AND in_array($linking_type, array('anchor')) ): ?>
 				<a href="<?php echo $url ?>"><?php echo JText::_($button_title) ?></a>
 			<?php endif ?>
-		</div>
-		<div class="col-xs-4 text-center icon">
-			<?php require JModuleHelper::getLayoutPath('mod_bpicon', 'icon'); ?>
 		</div>
 	</div>
 </div>

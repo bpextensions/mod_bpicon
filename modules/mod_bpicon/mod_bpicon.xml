@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.4" client="site" method="upgrade">
 	<name>mod_bpicon</name>
-	<author>Artur Stępień</author>
-	<creationDate>2016/06/07</creationDate>
-	<copyright>Copyright (C) 2016 BestProject. All rights reserved.</copyright>
-	<license>GNU General Public License version 3 or later; see http://www.gnu.org/licenses/gpl-3.0.txt</license>
-	<authorEmail>artur.stepien@bestproject.pl</authorEmail>
-	<authorUrl>www.bestproject.pl</authorUrl>
-	<version>1.5.4</version>
+	<author>${author.name}</author>
+	<creationDate>${build.date}</creationDate>
+	<copyright>Copyright (C) ${build.year} ${copyrights}. All rights reserved.</copyright>
+	<license>${license.name}, see ${license.url}</license>
+	<authorEmail>${author.email}</authorEmail>
+	<authorUrl>${author.url}</authorUrl>
+	<version>${build.version}</version>
 	<description>MOD_BPICON_XML_DESCRIPTION</description>
 	
 	<files>
+		<folder>assets</folder>
 		<folder>fields</folder>
 		<folder>language</folder>
 		<folder>tmpl</folder>
