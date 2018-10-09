@@ -14,14 +14,19 @@ A Joomla! 3 module for displaying an FontAwesome/Google Material Design Icons/Im
 ## Build from repo
 To build from repository you gonna need following tools:
 - PHP 7
-- Composer (installd globaly)
-- Node/NPM
+- Composer (installed globaly)
+- Phing (installed globaly)
+- Node/NPM (installed globaly)
 
 ### How to prepare development environmnt
 - Clone repository into working Joomla! 3.8 installation
 - Run `composer install`
 - Run `npm install`
 - When all the requirements are installed just run `npm gulp watch`
+
+### How to build installation package
+- Run `phing` or `composer build`
+- Your installation package should be ready in `/.build/mod_bpicon.zip` directory
 
 ## Changelog
 ### 1.5.4
