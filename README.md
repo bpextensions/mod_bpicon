@@ -4,6 +4,12 @@
 
 A Joomla! 3 module for displaying an FontAwesome/Google Material Design Icons/Image Icon.
 
+- [Functionality](#functionality)
+- [Build from repo](#build-from-repo)
+    - [How to prepare development environmnt](#how-to-prepare-development-environmnt)
+    - [How to build installation package](#how-to-build-installation-package)
+- [Changelog](#changelog)
+
 ## Functionality
 - FontAwesome Icons support (easy selection from a preview window).
 - Google Material Design Icons support (easy selection from a preview window).
