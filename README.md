@@ -1,4 +1,7 @@
-# mod_bpicon
+# BP Icon Joomla! module
+![GitHub](https://img.shields.io/github/license/bestproject/mod_bpicon.svg)
+![GitHub issues](https://img.shields.io/github/issues-raw/bestproject/mod_bpicon.svg)
+
 A Joomla! 3 module for displaying an FontAwesome/Google Material Design Icons/Image Icon.
 
 ## Functionality
