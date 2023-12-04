@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.4" client="site" method="upgrade">
+<extension type="module" client="site" method="upgrade">
 	<name>mod_bpicon</name>
 	<author>${author.name}</author>
 	<creationDate>${build.date}</creationDate>
@@ -9,183 +9,84 @@
 	<authorUrl>${author.url}</authorUrl>
 	<version>${build.version}</version>
 	<description>MOD_BPICON_XML_DESCRIPTION</description>
+
+	<namespace path="src">BPExtensions\Module\BPIcon</namespace>
 	
 	<files>
-		<folder>assets</folder>
-		<folder>fields</folder>
-		<folder>language</folder>
+		<folder>forms</folder>
+		<folder module="mod_bpicon">services</folder>
+		<folder>src</folder>
 		<folder>tmpl</folder>
-		<filename>helper.php</filename>
-		<filename module="mod_bpicon">mod_bpicon.php</filename>
 	</files>
 	
 	<languages folder="language">
-		<language tag="pl-PL">pl-PL/pl-PL.mod_bpicon.ini</language>
-		<language tag="pl-PL">pl-PL/pl-PL.mod_bpicon.sys.ini</language>
-		<language tag="en-GB">en-GB/en-GB.mod_bpicon.ini</language>
-		<language tag="en-GB">en-GB/en-GB.mod_bpicon.sys.ini</language>
+		<language tag="pl-PL">pl-PL/mod_bpicon.ini</language>
+		<language tag="pl-PL">pl-PL/mod_bpicon.sys.ini</language>
+		<language tag="en-GB">en-GB/mod_bpicon.ini</language>
+		<language tag="en-GB">en-GB/mod_bpicon.sys.ini</language>
 	</languages>
 	
 	<updateservers>
-		<server type="extension" priority="5" name="BP Icon">https://raw.githubusercontent.com/bestproject/mod_bpicon/updates/update.xml</server>
+		<server type="extension" priority="5" name="BP Icon">https://free.updates.bpextensions.com/mod_bpicon.xml</server>
 	</updateservers>
 	
 	<config>
 		<fields name="params">
-			<fieldset name="basic" addfieldpath="/modules/mod_bpicon/fields">
-                
-                <field name="provider" type="radio"
-					default="fontawesome"
-					class="btn-group"
-					required="true"
-					label="MOD_BPICON_FIELD_PROVIDER_LABEL"
-					description="MOD_BPICON_FIELD_PROVIDER_DESC"
-				>
-					<option value="fontawesome">MOD_BPICON_FIELD_PROVIDER_OPTION_FONTAWESOME</option>
-					<option value="materialicons">MOD_BPICON_FIELD_PROVIDER_OPTION_MATERIALICONS</option>
-					<option value="image">MOD_BPICON_FIELD_PROVIDER_OPTION_IMAGE</option>
+			<fieldset name="basic">
+
+				<field
+						name="columns"
+						type="number"
+						style="width:5em"
+						default="1"
+						min="1" max="12" step="1"
+						label="MOD_BPICON_FIELD_COLUMNS_LABEL"
+						description="MOD_BPICON_FIELD_COLUMNS_LABEL">
+
 				</field>
-                
-				<field name="icon_materialdesign" type="materialdesigniconspreview"
-					required="true" default="local_florist"
-                    showon="provider:materialicons"
-					label="MOD_BPICON_FIELD_ICON_LABEL"
-					description="MOD_BPICON_FIELD_ICON_DESC"
+
+				<field name="items" type="subform" required="true" min="1"
+					   formsource="modules/mod_bpicon/forms/item.xml" multiple="true"
+					   label="MOD_BPICON_FIELD_ITEMS_LABEL"
+					   description="MOD_BPICON_FIELD_ITEMS_DESC"
 				/>
-                
-				<field name="icon_fontawesome" type="fontawesomepreview"
-					required="true" default="joomla"
-                    showon="provider:fontawesome"
-					label="MOD_BPICON_FIELD_ICON_LABEL"
-					description="MOD_BPICON_FIELD_ICON_DESC"
-				/>
-                
-                <field name="icon_image" type="media" 
-                    preview="tooltip" preview_width="64" preview_height="64"
-					required="true" default="images/joomla_black.png"
-                    showon="provider:image"
-					label="MOD_BPICON_FIELD_ICON_LABEL"
-					description="MOD_BPICON_FIELD_ICON_DESC"
-				/>
-                
-				<field name="iconsize" type="number"
-					min="1" showon="provider:fontawesome,materialicons"
-					required="true"
-					default="64"
-					label="MOD_BPICON_FIELD_ICONSIZE_LABEL"
-					description="MOD_BPICON_FIELD_ICONSIZE_DESC"
-				/>
-				<field name="type" type="radio"
-					default="text"
-					class="btn-group"
-					required="true"
-					label="MOD_BPICON_FIELD_TYPE_LABEL"
-					description="MOD_BPICON_FIELD_TYPE_DESC"
-				>
-					<option value="article">MOD_BPICON_FIELD_TYPE_OPTION_ARTICLE</option>
-					<option value="text">MOD_BPICON_FIELD_TYPE_OPTION_TEXT</option>
-				</field>
-				<field name="article" type="modal_article"
-					edit="true" clear="false"
-					addfieldpath="/administrator/components/com_content/models/fields"
-					showon="type:article"
-					label="MOD_BPICON_FIELD_ARTICLE_LABEL"
-					description="MOD_BPICON_FIELD_ARTICLE_DESC"
-				/>
-				<field name="url_type" type="radio"
-					class="btn-group"
-					default="none"
-					label="MOD_BPICON_FIELD_URLTYPE_LABEL"
-					description="MOD_BPICON_FIELD_URLTYPE_DESC"
-				>
-					<option value="none">MOD_BPICON_FIELD_URLTYPE_OPTION_NONE</option>
-					<option value="external">MOD_BPICON_FIELD_URLTYPE_OPTION_EXTERNAL</option>
-					<option value="article">MOD_BPICON_FIELD_URLTYPE_OPTION_ARTICLE</option>
-					<option value="menu">MOD_BPICON_FIELD_URLTYPE_OPTION_MENU</option>
-				</field>
-				<field name="url_external" type="text" 
-					showon="url_type:external"
-					label="MOD_BPICON_FIELD_URLEXTERNAL_LABEL"
-					description="MOD_BPICON_FIELD_URLEXTERNAL_DESC"
-					hint="MOD_BPICON_FIELD_URLEXTERNAL_HINT"
-				/>
-				<field name="url_article" type="modal_article"
-					edit="true" clear="false"
-					addfieldpath="/administrator/components/com_content/models/fields"
-					showon="url_type:article"
-					label="MOD_BPICON_FIELD_URLARTICLE_LABEL"
-					description="MOD_BPICON_FIELD_URLARTICLE_DESC"
-				/>
-				<field name="url_menu" type="menuitem" 
-					showon="url_type:menu"
-					label="MOD_BPICON_FIELD_URLMENU_LABEL"
-					description="MOD_BPICON_FIELD_URLMENU_DESC"
-				/>
-				<field name="linking_type" type="radio"
-					class="btn-group"
-					default="all"
-					showon="url_type:external,article,menu"
-					label="MOD_BPICON_FIELD_LINKINGTYPE_LABEL"
-					description="MOD_BPICON_FIELD_LINKINGTYPE_DESC">
-					<option value="all">MOD_BPICON_FIELD_LINKINGTYPE_OPTION_ALL</option>
-					<option value="title">MOD_BPICON_FIELD_LINKINGTYPE_OPTION_TITLE</option>
-					<option value="icon">MOD_BPICON_FIELD_LINKINGTYPE_OPTION_ICON</option>
-					<option value="button">MOD_BPICON_FIELD_LINKINGTYPE_OPTION_BUTTON</option>
-					<option value="anchor">MOD_BPICON_FIELD_LINKINGTYPE_OPTION_ANCHOR</option>
-				</field>
-				<field name="button_title" type="text" 
-					showon="linking_type:button"
-					default=""
-					label="MOD_BPICON_FIELD_BUTTONTITLE_LABEL"
-					description="MOD_BPICON_FIELD_BUTTONTITLE_DESC"
-					hint="MOD_BPICON_FIELD_BUTTONTITLE_HINT"
-				/>
-				<field name="title" type="text" 
-					showon="type:text"
-					label="MOD_BPICON_FIELD_TITLE_LABEL"
-					description="MOD_BPICON_FIELD_TITLE_DESC"
-				/>
-				<field name="text" type="editor" 
-					showon="type:text" filter="safehtml"
-					label="MOD_BPICON_FIELD_TEXT_LABEL"
-					description="MOD_BPICON_FIELD_TEXT_DESC"
-				/>
+
 			</fieldset>
 			<fieldset
-				name="advanced">
+					name="advanced">
 				<field
-					name="layout"
-					type="modulelayout"
-					default="top"
-					label="JFIELD_ALT_LAYOUT_LABEL"
-					description="JFIELD_ALT_MODULE_LAYOUT_DESC">
-					
+						name="layout"
+						type="modulelayout"
+						label="JFIELD_ALT_LAYOUT_LABEL"
+						class="form-select"
+						validate="moduleLayout"/>
+
+				<field
+						name="moduleclass_sfx"
+						type="textarea" rows="3"
+						label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+						description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+
+				<field
+						name="cache"
+						type="list"
+						default="1"
+						label="COM_MODULES_FIELD_CACHING_LABEL"
+						description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+							value="1">JGLOBAL_USE_GLOBAL
+					</option>
+					<option
+							value="0">COM_MODULES_FIELD_VALUE_NOCACHING
+					</option>
 				</field>
 
 				<field
-					name="moduleclass_sfx"
-					type="textarea" rows="3"
-					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
-
-				<field
-					name="cache"
-					type="list"
-					default="1"
-					label="COM_MODULES_FIELD_CACHING_LABEL"
-					description="COM_MODULES_FIELD_CACHING_DESC">
-					<option
-						value="1">JGLOBAL_USE_GLOBAL</option>
-					<option
-						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
-				</field>
-
-				<field
-					name="cache_time"
-					type="text"
-					default="900"
-					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
-					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+						name="cache_time"
+						type="text"
+						default="900"
+						label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+						description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
 			</fieldset>
 		</fields>
 	</config>

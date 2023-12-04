@@ -1,60 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="BP Icon" default="build:clean" basedir="." description="BP Icon build task">
-    
-    <property file="./build.properties" />
-    
+<project name="BP Icon" default="build:clean" basedir="." description="BP Form build task">
+
+    <property file="./build.properties"/>
+
     <php expression="date('F Y')" returnProperty="build.date"/>
     <php expression="date('Y')" returnProperty="build.year"/>
-    
+
+    <target name="test">
+        <echo msg="Test each extension before build"/>
+        <phingcall target="test:compatibility"/>
+        <phingcall target="test:mod_bpicon"/>
+    </target>
+
+    <target name="test:compatibility">
+        <echo msg="Testing PHP 7.2|8.0+ Compatibility"/>
+        <exec command="composer test:compatibility" checkreturn="true"/>
+    </target>
+
+    <target name="test:mod_bpicon">
+        <echo msg="Testing mod_bpicon"/>
+        <echo msg="No tests yet."/>
+    </target>
+
     <target name="build:mod_bpicon">
-        <echo msg="Creating module directory" />
-        <mkdir dir="./.build/mod_bpicon" />
-        
-        <echo msg="Building module installer" />
-        <copy todir="./.build/mod_bpicon" >
+        <echo msg="Creating module directory"/>
+        <mkdir dir="./.build/mod_bpicon"/>
+
+<!--        <echo msg="Building assets with Webpack"/>-->
+<!--        <exec command="npm run prod" checkreturn="true"/>-->
+
+        <echo msg="Building module installer"/>
+
+        <copy todir="./.build/mod_bpicon">
             <fileset dir="./modules/mod_bpicon">
-                <include name="**/*" />
-                <exclude name=".dev/**" />
-                <exclude name=".dev/" />
+                <include name="**/*"/>
+                <exclude name=".dev/**"/>
+                <exclude name=".dev/"/>
             </fileset>
             <filterchain>
                 <replacetokens begintoken="${" endtoken="}">
-                    <token key="build.date" value="${build.date}" />
-                    <token key="build.year" value="${build.year}" />
-                    <token key="copyrights" value="${copyrights}" />
-                    <token key="license.name" value="${license.name}" />
-                    <token key="license.url" value="${license.url}" />
-                    <token key="build.version" value="${build.version}" />
-                    <token key="package" value="${package}" />
-                    <token key="author.url" value="${author.url}" />
-                    <token key="author.name" value="${author.name}" />
-                    <token key="author.email" value="${author.email}" />
+                    <token key="build.date" value="${build.date}"/>
+                    <token key="build.year" value="${build.year}"/>
+                    <token key="copyrights" value="${copyrights}"/>
+                    <token key="license.name" value="${license.name}"/>
+                    <token key="license.url" value="${license.url}"/>
+                    <token key="build.version" value="${build.version}"/>
+                    <token key="build.release" value="${build.release}"/>
+                    <token key="package" value="${package}"/>
+                    <token key="subpackage" value="${subpackage}"/>
+                    <token key="author.url" value="${author.url}"/>
+                    <token key="author.name" value="${author.name}"/>
+                    <token key="author.email" value="${author.email}"/>
                 </replacetokens>
             </filterchain>
         </copy>
 
-        <echo msg="Creating module zipfile." />
-        <zip destfile="./.build/mod_bpicon.zip" basedir="./.build/mod_bpicon"/>
+<!--        <echo msg="Prepare module media"/>-->
+
+<!--        <copy todir="./.build/mod_bpicon/media">-->
+<!--            <fileset dir="./media/mod_bpicon">-->
+<!--                <include name="**/*"/>-->
+<!--            </fileset>-->
+<!--            <filterchain>-->
+<!--                <replacetokens begintoken="${" endtoken="}">-->
+<!--                    <token key="build.date" value="${build.date}"/>-->
+<!--                    <token key="build.year" value="${build.year}"/>-->
+<!--                    <token key="copyrights" value="${copyrights}"/>-->
+<!--                    <token key="license.name" value="${license.name}"/>-->
+<!--                    <token key="license.url" value="${license.url}"/>-->
+<!--                    <token key="build.version" value="${build.version}"/>-->
+<!--                    <token key="build.release" value="${build.release}"/>-->
+<!--                    <token key="package" value="${package}"/>-->
+<!--                    <token key="subpackage" value="${subpackage}"/>-->
+<!--                    <token key="author.url" value="${author.url}"/>-->
+<!--                    <token key="author.name" value="${author.name}"/>-->
+<!--                    <token key="author.email" value="${author.email}"/>-->
+<!--                </replacetokens>-->
+<!--            </filterchain>-->
+<!--        </copy>-->
+
+        <echo msg="Creating module zipfile."/>
+        <zip destfile="./.build/mod_bpicon_v${build.version}_${build.release}.zip" basedir="./.build/mod_bpicon"/>
     </target>
-    
+
     <target name="build">
-        <echo msg="Creating build directory ./.build" />
-        <mkdir dir="./.build" />
-        
-        <echo msg="Building each of the extensions" />
-        <phingcall target="build:mod_bpicon"></phingcall>
-        
+        <phingcall target="test"/>
+
+        <echo msg="Creating build directory ./.build"/>
+        <mkdir dir="./.build"/>
+
+        <echo msg="Building each of the extensions"/>
+        <phingcall target="build:mod_bpicon"/>
+
     </target>
 
     <target name="clean">
-        <echo msg="Removing build directory ./.build if exists" />
+        <echo msg="Removing build directory ./.build if exists"/>
         <delete dir="./.build" includeemptydirs="true"/>
     </target>
-    
+
     <target name="build:clean">
-        <echo msg="Creating a clean build." />
-        <phingcall target="clean"></phingcall>
-        <phingcall target="build"></phingcall>
+        <echo msg="Creating a clean build."/>
+        <phingcall target="clean"/>
+        <phingcall target="build"/>
     </target>
 
 </project>

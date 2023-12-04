@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+
+    <field name="provider" type="radio"
+           class="btn-group"
+           default="image"
+           required="true"
+           label="MOD_BPICON_FIELD_PROVIDER_LABEL"
+           description="MOD_BPICON_FIELD_PROVIDER_DESC"
+    >
+        <option value="image">MOD_BPICON_FIELD_PROVIDER_OPTION_IMAGE</option>
+    </field>
+
+
+    <field
+            name="layout"
+            type="list"
+            required="true"
+            default="above"
+            label="MOD_BPICON_FIELD_LAYOUT_LABEL"
+            description="MOD_BPICON_FIELD_LAYOUT_DESC">
+        <option value="above">MOD_BPICON_FIELD_LAYOUT_OPTION_ABOVE</option>
+        <option value="left">MOD_BPICON_FIELD_LAYOUT_OPTION_LEFT</option>
+        <option value="right">MOD_BPICON_FIELD_LAYOUT_OPTION_RIGHT</option>
+        <option value="below">MOD_BPICON_FIELD_LAYOUT_OPTION_BELOW</option>
+    </field>
+
+    <field name="icon_image" type="media"
+           preview="tooltip" preview_width="64" preview_height="64"
+           required="true" default=""
+           showon="provider:image"
+           label="MOD_BPICON_FIELD_ICON_LABEL"
+           description="MOD_BPICON_FIELD_ICON_DESC"
+    />
+    <field name="title" type="text"
+           showon="type:text"
+           label="MOD_BPICON_FIELD_TITLE_LABEL"
+           description="MOD_BPICON_FIELD_TITLE_DESC"
+    />
+    <field name="text" type="editor"
+           showon="type:text" filter="safehtml"
+           label="MOD_BPICON_FIELD_TEXT_LABEL"
+           description="MOD_BPICON_FIELD_TEXT_DESC"
+    />
+
+    <field name="url_type" type="radio"
+           class="btn-group"
+           default="none"
+           label="MOD_BPICON_FIELD_URLTYPE_LABEL"
+           description="MOD_BPICON_FIELD_URLTYPE_DESC"
+    >
+        <option value="none">MOD_BPICON_FIELD_URLTYPE_OPTION_NONE</option>
+        <option value="external">MOD_BPICON_FIELD_URLTYPE_OPTION_EXTERNAL</option>
+        <option value="article">MOD_BPICON_FIELD_URLTYPE_OPTION_ARTICLE</option>
+        <option value="menu">MOD_BPICON_FIELD_URLTYPE_OPTION_MENU</option>
+    </field>
+    <field name="url_external" type="text"
+           showon="url_type:external"
+           label="MOD_BPICON_FIELD_URLEXTERNAL_LABEL"
+           description="MOD_BPICON_FIELD_URLEXTERNAL_DESC"
+           hint="MOD_BPICON_FIELD_URLEXTERNAL_HINT"
+    />
+    <field name="url_article" type="modal_article" showon="url_type:article"
+           addfieldprefix="Joomla\Component\Content\Administrator\Field"
+           filter="integer"
+           select="true"
+           new="true"
+           edit="true"
+           clear="true"
+           label="MOD_BPICON_FIELD_URLARTICLE_LABEL"
+           description="MOD_BPICON_FIELD_URLARTICLE_DESC"
+    />
+    <field name="url_menu" type="Modal_Menu" showon="url_type:menu"
+           addfieldprefix="Joomla\Component\Menus\Administrator\Field"
+           select="true"
+           new="true"
+           edit="true"
+           clear="true"
+           filter="integer"
+           label="MOD_BPICON_FIELD_URLMENU_LABEL"
+           description="MOD_BPICON_FIELD_URLMENU_DESC"
+    />
+
+    <field name="linking_type" type="radio"
+           class="btn-group"
+           default="all"
+           showon="url_type:external,article,menu"
+           label="MOD_BPICON_FIELD_LINKINGTYPE_LABEL"
+           description="MOD_BPICON_FIELD_LINKINGTYPE_DESC">
+        <option value="all">MOD_BPICON_FIELD_LINKINGTYPE_OPTION_ALL</option>
+        <option value="button">MOD_BPICON_FIELD_LINKINGTYPE_OPTION_BUTTON</option>
+
+    </field>
+
+    <field name="button_title" type="text"
+           showon="linking_type:button"
+           default=""
+           label="MOD_BPICON_FIELD_BUTTONTITLE_LABEL"
+           description="MOD_BPICON_FIELD_BUTTONTITLE_DESC"
+           hint="MOD_BPICON_FIELD_BUTTONTITLE_HINT"
+    />
+
+</form>

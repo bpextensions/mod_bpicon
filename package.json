@@ -1,11 +1,14 @@
 {
     "name": "bp-icon",
-    "version": "1.0.0",
+    "version": "1.6.0",
     "description": "A Joomla! 3 module displaying icons with text.",
     "main": "bundle.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "gulp": "gulp"
+        "dev": "./node_modules/.bin/encore dev",
+        "watch": "./node_modules/.bin/encore dev --watch",
+        "watch-prod": "./node_modules/.bin/encore prod --watch",
+        "prod": "./node_modules/.bin/encore prod"
     },
     "repository": {
         "type": "git",
@@ -21,15 +24,12 @@
         "url": "https://github.com/bestproject/mod_bpicon/issues"
     },
     "homepage": "https://github.com/bestproject/mod_bpicon#readme",
-    "dependencies": {
-        "gulp": "^4.0.0",
-        "gulp-clean": "^0.4.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-rename": "^1.4.0",
-        "gulp-sass": "^4.0.1",
-        "gulp-uglify": "^3.0.1",
-        "gulp-uglifycss": "^1.1.0",
-        "gulp-watch": "^5.0.1",
-        "merge-stream": "^1.0.1"
+    "dependencies": {},
+    "devDependencies": {
+        "@fortawesome/fontawesome-free": "^5.7.2",
+        "@symfony/webpack-encore": "^0.23.0",
+        "node-sass": "^4.11.0",
+        "sass-loader": "^7.1.0",
+        "webpack-notifier": "^1.7.0"
     }
 }

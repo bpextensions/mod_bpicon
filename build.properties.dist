@@ -1,0 +1,10 @@
+package=BPExtensions.Module.BPIcon
+subpackage=mod_icon
+build.version=
+build.release=
+copyrights=Grupa Best Sp. z o.o.
+license.name=GNU General Public License version 3 or later
+license.url=LICENSE.txt
+author.url=https://bpextensions.com
+author.name=BP Extensions
+author.email=contact@bpextensions.com

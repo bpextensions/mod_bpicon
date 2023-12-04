@@ -2,36 +2,37 @@
 ![GitHub](https://img.shields.io/github/license/bestproject/mod_bpicon.svg)
 ![GitHub issues](https://img.shields.io/github/issues-raw/bestproject/mod_bpicon.svg)
 
-A Joomla! 3 module for displaying an FontAwesome/Google Material Design Icons/Image Icon.
+A Joomla! 4 module for displaying an icon with text, title and a button.
 
 ## Functionality
-- FontAwesome Icons support (easy selection from a preview window).
-- Google Material Design Icons support (easy selection from a preview window).
-- Icons fonts are served from CDNs.
 - Image file as icon.
-- Linking type (title, text, icon, all).
+- Linking type (button, all).
 - Linking (external url, article, menu item).
 - Update server.
-- Bootstrap3 ready.
+- Bootstrap 5 ready.
 
 ## Build from repo
 To build from repository you gonna need following tools:
 - PHP 7
-- Composer (installed globaly)
-- Phing (installed globaly)
-- Node/NPM (installed globaly)
+- Composer (installed globally)
+- Phing (installed globally)
+- Node/NPM (installed globally)
 
-### How to prepare development environmnt
-- Clone repository into working Joomla! 3.8 installation
+### How to prepare development environment
+- Clone repository into working Joomla! 4.4 installation
 - Run `composer install`
-- Run `npm install`
-- When all the requirements are installed just run `npm gulp watch`
 
 ### How to build installation package
 - Run `phing` or `composer build`
 - Your installation package should be ready in `/.build/mod_bpicon.zip` directory
 
 ## Changelog
+### 2.x
+- Rewritten for Joomla! 4
+- Removed common icon providers in favor of image icons
+- Added the ability to add multiple icons in same module and set number of columns to display
+- Improved accessibility.
+
 ### 1.5.4
 - Removed duplicated stylesheets.
 
