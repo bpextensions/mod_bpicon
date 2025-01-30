@@ -21,7 +21,7 @@ use Joomla\CMS\Helper\HelperFactoryAwareTrait;
 // phpcs:enable PSR1.Files.SideEffects
 
 /**
- * Dispatcher class for mod_articles_news
+ * Dispatcher class for mod_bpicon
  */
 class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareInterface
 {
@@ -44,7 +44,7 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
         $app = $this->getApplication();
 
         $data['items'] = $helper->getItems($data['params']);
-        $data['moduleclass_sfx'] = htmlspecialchars($data['params']->get('moduleclass_sfx'));
+        $data['moduleclass_sfx'] = htmlspecialchars((string)$data['params']->get('moduleclass_sfx',''));
         $data['wa'] = $app->getDocument()->getWebAssetManager();
 
         return $data;
