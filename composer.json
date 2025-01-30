@@ -2,11 +2,9 @@
     "scripts": {
         "build": "phing",
         "test:compatibility": [
-            "@test:compatibility:php72",
-            "@test:compatibility:php80"
+            "@test:compatibility:php81"
         ],
-        "test:compatibility:php72": "phpcs --standard=.phpcs/compatibility/php72.xml .",
-        "test:compatibility:php80": "phpcs --standard=.phpcs/compatibility/php80.xml ."
+        "test:compatibility:php81": "phpcs --standard=.phpcs/compatibility/php81.xml ."
     },
     "require-dev": {
         "phing/phing": "2.*",
