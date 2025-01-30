@@ -46,8 +46,8 @@ class BPIconHelper
      */
     public static function getButtonText(object $item): string
     {
-        if ($item->title !== '') {
-            return $item->title;
+        if ($item->button_title !== '') {
+            return $item->button_title;
         }
 
         return Text::_('MOD_BPICON_READMORE');
